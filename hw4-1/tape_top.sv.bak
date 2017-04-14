@@ -1,0 +1,9 @@
+module top;
+	bit clk;
+	always #5 clk = ~clk;
+
+	// Instantiate the interface
+	tape_if tapeif(clk);
+
+	// Map to the DUT
+	TAPE_PLAYER u1 ()

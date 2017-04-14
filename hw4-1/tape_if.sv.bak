@@ -1,0 +1,12 @@
+interface tape_if(input bit clk);
+	logic PL, RE, FF, ST, M,
+	      P, F, R, RESET, CLK;
+	bit[15:0] COUNT;
+
+	clocking cb @(posedge clk);
+		output PL, RE, FF, ST, M, RESET, CLK;
+		input P, F, R, COUNT;
+	endclocking
+
+	modport TEST(clocking cb);
+endinterface
